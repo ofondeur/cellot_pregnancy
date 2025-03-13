@@ -5,18 +5,27 @@ import re
 import numpy as np
 
 
-def create_list_of_paths(
-    directory, stimulation, cell_type=None, sample=None, patient_excluded=None
+def create_list_of_paths2(
+    directory, stimulation, cell_type=None, sample=None, patient_excluded=[]
 ):
     paths_list = []
     for filename in os.listdir(directory):
-        if (
-            stimulation in filename
-            and (cell_type is None or cell_type in filename)
-            and (sample is None or sample in filename)
-            and (patient_excluded is None or patient_excluded not in filename)
-        ):
-            paths_list.append(os.path.join(directory, filename))
+        if len(patient_excluded) > 0:
+            for patient in patient_excluded:
+                if (
+                    stimulation in filename
+                    and (cell_type is None or cell_type in filename)
+                    and (sample is None or sample in filename)
+                    and patient not in filename
+                ):
+                    paths_list.append(os.path.join(directory, filename))
+        else:
+            if (
+                stimulation in filename
+                and (cell_type is None or cell_type in filename)
+                and (sample is None or sample in filename)
+            ):
+                paths_list.append(os.path.join(directory, filename))
     return paths_list
 
 

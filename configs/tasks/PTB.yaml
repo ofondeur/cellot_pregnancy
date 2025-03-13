@@ -1,0 +1,15 @@
+data:
+  features: ./datasets/PTB_training/features_PTB.txt
+  path: ./datasets/PTB_training/combined_LPS_cMC_train.h5ad
+  condition: drug
+  source: Unstim
+  type: cell
+
+dataloader:
+  batch_size: 256
+  shuffle: true
+
+datasplit:
+  groupby: drug
+  name: train_test
+  test_size: 0.2
