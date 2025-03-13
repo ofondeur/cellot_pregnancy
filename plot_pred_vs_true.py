@@ -67,7 +67,7 @@ def plot_result(prediction_path, original_path, marker, outdir_path):
     dist_data = {
         "Patient_1": {
             "Stim True": stim.values,
-            "Stim Pred": dataf["Stim Pred"].values,
+            "Stim Pred": dataf[marker].values,
             "Unstim": unstim.values,
         }
     }
