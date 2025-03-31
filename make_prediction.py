@@ -72,3 +72,13 @@ result_path = "results/PTB/LPS_cMC/model-cellot"
 unstim_data_path = "datasets/PTB_training/LPS_cMC_HV01.h5ad"
 output_path = "results/PTB/LPS_cMC/model-cellot/pred.csv"
 ada = predict_from_unstim_data(result_path, unstim_data_path, "csv", output_path)
+
+perio_stim_list_=['TNFa','P._gingivalis','IFNa']
+perio_cell_list_=['Granulocytes_(CD45-CD66+)','B-Cells_(CD19+CD3-)','Classical_Monocytes_(CD14+CD16-)','MDSCs_(lin-CD11b-CD14+HLADRlo)','mDCs_(CD11c+HLADR+)','pDCs(CD123+HLADR+)','Intermediate_Monocytes_(CD14+CD16+)','Non-classical_Monocytes_(CD14-CD16+)','CD56+CD16-_NK_Cells','CD56loCD16+NK_Cells','NK_Cells_(CD7+)','CD4_T-Cells','Tregs_(CD25+FoxP3+)','CD8_T-Cells','CD8-CD4-_T-Cells']
+for cell_type in perio_cell_list_:
+    for stim in perio_stim_list_:
+        unstim_data_path = f'./sherlock_training_data/perio_data_sherlock{stim}_{cell_type}_train.h5ad'
+        result_path = f"results/perio/{stim}_{cell_type}/model-cellot"
+        output_path = f'results/perio/{stim}_{cell_type}/model-cellot/pred.csv'
+        ada = predict_from_unstim_data(result_path, unstim_data_path, "csv", output_path)
+        print(f"Predicted {cell_type} for {stim}")
