@@ -18,14 +18,14 @@ def create_list_of_paths2(
                     and (sample is None or sample in filename)
                     and patient not in filename
                 ):
-                    paths_list.append(os.path.join(directory, filename))
+                    paths_list.append([os.path.join(directory, filename),cell_type])
         else:
             if (
                 stimulation in filename
                 and (cell_type is None or cell_type in filename)
                 and (sample is None or sample in filename)
             ):
-                paths_list.append(os.path.join(directory, filename))
+                paths_list.append([os.path.join(directory, filename),cell_type])
     return paths_list
 
 
