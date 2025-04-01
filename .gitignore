@@ -47,8 +47,8 @@ __pycache__/
 # other
 .vscode
 PerioStudy_Complete Plates 1-13_011717 (Clone) - Gated Populations/
-perio_data_sherlock/
+perio_data_sherlock2/
 yaml/
-cellot3/
+create_data_cellot/
 sherlock_training_data/
 perio_data_sherlockTNFa_Granulocytes (CD45-CD66+)_train.h5ad
