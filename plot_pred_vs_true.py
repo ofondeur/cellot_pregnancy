@@ -53,14 +53,14 @@ def create_density_plots(dist_data, out_file, title_suffix=""):
     plt.close()
 
 
-def plot_result(prediction_path, original_path, marker, outdir_path):
+def plot_result(prediction_path, original_path, marker, outdir_path,stim):
     target = ad.read(original_path)
     target1 = target[:, marker].copy()
     stim = pd.Series(
-        target1[target1.obs["condition"] == "stim"].X.flatten(), name="Stim True"
+        target1[target1.obs["drug"] == stim].X.flatten(), name="Stim True"
     )
     unstim = pd.Series(
-        target1[target1.obs["condition"] == "control"].X.flatten(), name="Unstim"
+        target1[target1.obs["drug"] == "Unstim"].X.flatten(), name="Unstim"
     )
     dataf = pd.read_csv(prediction_path)
 

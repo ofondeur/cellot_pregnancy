@@ -40,7 +40,7 @@ def create_list_of_paths_spec_patients(
             and (sample is None or sample in filename)
             and (patient is None or patient in filename)
         ):
-            paths_list.append(os.path.join(directory, filename))
+            paths_list.append([os.path.join(directory, filename),cell_type])
     return paths_list
 
 
