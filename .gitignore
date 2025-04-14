@@ -59,3 +59,10 @@ surge_concatenated/
 combat_batch/
 surge_corrected/
 doms_corrected/
+perio_dbl_corrected/
+perio_doms_corrected/
+perio_surge_corrected/
+surge_dbl_corrected/
+surge_dbl_corrected_test/
+surge_concatenated_test/
+surge_concatenated_train/
