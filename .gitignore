@@ -66,3 +66,8 @@ surge_dbl_corrected/
 surge_dbl_corrected_test/
 surge_concatenated_test/
 surge_concatenated_train/
+
+*/
+!**/*.*
+pred_surge_test_corrected_dbl.h5ad
+pred_surge_train_corrected_dbl.h5ad
