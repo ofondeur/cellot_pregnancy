@@ -125,7 +125,7 @@ def train_cellot(outdir, config):
         for _ in range(config.training.n_inner_iters):
 
             source = next(iterator_train_source).requires_grad_(True)
-
+    
             opts.g.zero_grad()
             gl = compute_loss_g(f, g, source).mean()
             if not g.softplus_W_kernels and g.fnorm_penalty > 0:
